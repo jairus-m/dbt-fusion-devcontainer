@@ -2,6 +2,11 @@
 
 A development container template for dbt projects that use the new fusion engine with additional tools and configurations.
 
+## Requirements
+- Docker Desktop
+- VS Code with Dev Containers (or Remote Explorer) extension
+- A `dbt-fusion` project that parses and compiles succesfully!
+
 ## Features
 - Official dbt VS Code Extension (also compatible with Cursor)
 - Base Python development environment / tools
@@ -12,21 +17,7 @@ A development container template for dbt projects that use the new fusion engine
 
 ## Usage
 
-### Option 1: Using the Template Directly
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/jairus-m/dbt-fusion-devcontainer.git
-   ```
-
-2. Copy the template files to your project:
-   ```bash
-   cp -r dbt-fusion-devcontainer/src/dbt-fusion/.devcontainer your-project/
-   ```
-
-3. Open your project in VS Code and use the Dev Containers extension to build and run the container.
-
-### Option 2: Using the Container Image
+### Reccomended: Using the Container Image
 
 1. Add the following to your project's `.devcontainer/devcontainer.json`:
    ```json
@@ -88,22 +79,10 @@ A development container template for dbt projects that use the new fusion engine
    }
    ```
 
-   > **Note**: The extensions are not pre-installed in the container. They are installed by VS Code when the container starts. This is the recommended approach as it allows for better extension management and updates.
+   > **Note**: The extensions are installed by VS Code when the container starts for ease of setup. To remove this configuration, remove the `"features"` key from the `devcontainer.json` file to manage the extension installation yourself.
 
-2. Open your project in VS Code and use the Dev Containers extension to build and run the container.
+2. Open your project in VS Code and use the Dev Containers (or Remote Explorer) extension to build and run the container.
 
-## Configuration Options
-
-> **Note**: These options are only prompted when using Option 1 (Template Directly) through VS Code's "Add Development Container Configuration Files" command. When using Option 2 (Container Image), these settings are pre-configured in the image.
-
-- `imageVariant`: Choose between Debian bullseye (recommended for Apple Silicon) or bookworm
-- `pythonVersion`: Select Python version (3.12, 3.11, or 3.10)
-
-## Requirements
-
-- Docker
-- VS Code with Dev Containers extension
-- Git
 
 ## Development
 
