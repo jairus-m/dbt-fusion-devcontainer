@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install uv
 
 # Install tools using uv and ensure they're in PATH
-RUN uv pip install --system ruff pre-commit ty
+RUN uv pip install --system ruff
 
 # Set the working directory
 WORKDIR /workspace

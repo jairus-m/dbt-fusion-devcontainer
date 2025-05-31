@@ -1,7 +1,7 @@
 {
     "name": "dbt Fusion",
-    "version": "1.0.2",
-    "description": "A development container for dbt-fusion projects with additional tools and configurations.",
+    "version": "1.0.3",
+    "description": "A development container for dbt projects that use the new fusion engine with the official dbt VS Code extension. ",
     "documentationURL": "https://github.com/jairus-m/dbt-fusion-devcontainer",
     "licenseURL": "https://github.com/jairus-m/dbt-fusion-devcontainer/blob/main/LICENSE",
     "options": {
