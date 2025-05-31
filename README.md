@@ -32,8 +32,34 @@ A development container template for dbt projects that use the new fusion engine
    ```json
    {
      "image": "ghcr.io/jairus-m/dbt-fusion-devcontainer/dbt-fusion:latest",
+     "remoteUser": "vscode",
+     "mounts": [
+       "source=${localEnv:HOME}/.dbt,target=/home/vscode/.dbt,type=bind",
+       "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind"
+     ],
+     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
      "customizations": {
        "vscode": {
+         "settings": {
+           "dbt.dbtPath": "/home/vscode/.local/bin/dbt",
+           "files.associations": {
+             "*.sql": "sql",
+             "*.yml": "yaml"
+           },
+           "[sql]": {
+             "editor.defaultFormatter": "dbtLabsInc.dbt",
+             "editor.formatOnSave": true
+           },
+           "[yaml]": {
+             "editor.defaultFormatter": "dbtLabsInc.dbt",
+             "editor.formatOnSave": true
+           },
+           "[python]": {
+             "editor.defaultFormatter": "charliermarsh.ruff",
+             "editor.formatOnSave": true
+           }
+         },
          "extensions": [
            "ms-python.python",
            "charliermarsh.ruff",
@@ -46,6 +72,17 @@ A development container template for dbt projects that use the new fusion engine
            "dbtlabsinc.dbt",
            "redhat.vscode-yaml"
          ]
+       }
+     },
+     "features": {
+       "ghcr.io/devcontainers/features/common-utils:2": {
+         "installZsh": true,
+         "username": "vscode",
+         "upgradePackages": true
+       },
+       "ghcr.io/devcontainers/features/python:1": {
+         "version": "3.12",
+         "installTools": true
        }
      }
    }
