@@ -1,6 +1,6 @@
 {
     "name": "dbt Fusion",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A development container for dbt-fusion projects with additional tools and configurations.",
     "documentationURL": "https://github.com/jairus-m/dbt-fusion-devcontainer",
     "licenseURL": "https://github.com/jairus-m/dbt-fusion-devcontainer/blob/main/LICENSE",
